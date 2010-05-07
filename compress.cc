@@ -164,6 +164,7 @@ class Gzip : public EventEmitter {
     }
 
     Local<Value> outString = Encode(out, out_size, BINARY);
+    free(buf);
     free(out);
     return scope.Close(outString);
   }
@@ -339,6 +340,7 @@ class Gunzip : public EventEmitter {
     int r = gunzip->GunzipInflate(buf, len, &out, &out_size);
 
     Local<Value> outString = Encode(out, out_size, enc);
+    free(buf);
     free(out);
     return scope.Close(outString);
   }

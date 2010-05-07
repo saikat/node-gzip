@@ -1,6 +1,5 @@
-var compress=require("./compress");
+var compress=require("../build/default/compress");
 var sys=require("sys");
-var posix=require("posix");
 
 // Create gzip stream
 var gzip=new compress.Gzip;

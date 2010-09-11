@@ -1,6 +1,6 @@
 var compress=require("../lib/gzip");
-var sys = require('sys')
-var fs = require('fs')
+var sys = require('sys');
+var fs = require('fs');
 var gzip = new compress.Gzip;
 var gunzip = new compress.Gunzip;
 

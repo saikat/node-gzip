@@ -9,7 +9,7 @@ var data = fs.readFileSync('files/testfile.gz', 'binary');
 for (var i = 0; i < 10000; i++)
 {
     if (!(i % 10))
-	console.log("Finished " + count);
+	console.log("Finished " + i);
 
     gunzip.init();
     var val = gunzip.inflate(data) + gunzip.end();

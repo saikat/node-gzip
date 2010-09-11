@@ -1,4 +1,4 @@
 build/
-compress-b.node
+compress.node
 .DS_Store
 .lock-wscript

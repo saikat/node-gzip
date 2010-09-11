@@ -8,6 +8,9 @@ var gunzip = new compress.Gunzip;
 var data = fs.readFileSync('files/testfile', 'binary')
 for (var i = 0; i < 1000; i++)
 {
+    if (!(i % 10))
+	console.log("Finished " + i);
+
     gzip.init();
     var val = gzip.deflate(data, 'binary');
     var val1 =  gzip.end();
@@ -17,5 +20,11 @@ for (var i = 0; i < 1000; i++)
 	throw "Error";
     
 }
-sys.puts("Test succeeded!");
+
+console.log("Waiting 10 seconds for GC to collect any extra garbage...");
+setTimeout(function() {
+    console.log("Memory usage should be back to normal now!");
+    setTimeout(function() {
+    }, 5000);
+}, 10000)
 
